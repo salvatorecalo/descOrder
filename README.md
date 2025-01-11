@@ -32,24 +32,17 @@ pip install pyinstaller
 ## Generate the Executable
 ### Use PyInstaller to create a single executable file:
 ```
-<<<<<<< HEAD
 pyinstaller --onefile --noconsole main.py
-=======
-pyinstaller --onefile --noconsole script.py
->>>>>>> 3f7e5c8 (Create README.md)
 ```
 
 ### **NB: The executable will be placed inside the dist folder.**
 
 ## Move the Executable to the Desired Folder
-<<<<<<< HEAD
 
 ## If you're on macOs/linux give the permission
 ```
 chmod +x main
 ```
-=======
->>>>>>> 3f7e5c8 (Create README.md)
 ### Copy or move the .exe file from the dist folder to the directory you want to organize.
 
 ## Run the Executable
