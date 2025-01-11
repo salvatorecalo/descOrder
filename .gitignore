@@ -1,0 +1,9 @@
+*.txt
+*.html
+venv
+__pycache__
+build
+dist
+plugins/__pycache__
+.spec
+.DS_Store
