@@ -11,12 +11,11 @@ from plugins.generate_folder import generate_folder
 from plugins.organize_files import organize_files
 
 def main():
-    log_file = open("log_file.txt", "w")
-    print("log file created")
-    files = os.listdir()
-    script_path = os.path.abspath(__file__)
-    extension = load_extension(files, log_file, script_path)
-    generate_folder(extension, log_file)
-    organize_files(files, script_path, log_file)
-    log_file.close()
+    with open("log_file.txt", "w") as log_file:
+        print("log file created")
+        files = os.listdir()
+        script_path = os.path.abspath(__file__)
+        extension = load_extension(files, log_file, script_path)
+        generate_folder(extension, log_file)
+        organize_files(files, script_path, log_file)
 main()
