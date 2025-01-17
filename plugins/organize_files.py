@@ -1,6 +1,7 @@
 import os
 import shutil
-def organize_files(files: list, script_path: str):
+from typing import TextIO
+def organize_files(files: list, script_path: str, log_file: TextIO):
     """ 
     Organize files into corresponding folders
     """ 
@@ -11,4 +12,4 @@ def organize_files(files: list, script_path: str):
             folder_name = f"{file_extension.strip('.')} files"  # Folder name based on extension
             if os.path.exists(folder_name):  # If folder exists, move the file there
                 shutil.move(file, os.path.join(folder_name, file))
-                print(f"Moved {file} into {os.path.join(folder_name, file)} folder name {folder_name}")
+                log_file.write(f"Moved {file} into {os.path.join(folder_name, file)} folder name {folder_name} \n")

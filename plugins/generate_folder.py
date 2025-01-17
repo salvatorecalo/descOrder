@@ -1,6 +1,7 @@
 import os
+from typing import TextIO
 
-def generate_folders(extension: list):
+def generate_folder(extension: list, log_file: TextIO):
     """
         Auxiliary function to create folders based on file extensions
     """
@@ -11,7 +12,7 @@ def generate_folders(extension: list):
             folder_name = f"{ext.strip('.')} files"
             if not os.path.exists(folder_name):  # Avoid creating a folder if it already exists
                 os.mkdir(folder_name)
-                print(f"Created {folder_name} folder")
+                log_file.write(f"Created {folder_name} folder \n")
     except Exception as msg:
         print(f"Error creating folders: {msg}")
-    print("Created all folders")
+    log_file.write("Created all folders")
