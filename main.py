@@ -12,8 +12,9 @@ from plugins.organize_files import organize_files
 
 def main():
     files = os.listdir()
+    script_path = os.path.abspath(__file__)
     extension = load_extension(files)
     generate_folders(extension)
-    organize_files(files)
+    organize_files(files, script_path)
     
 main()
